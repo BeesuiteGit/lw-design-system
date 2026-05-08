@@ -1,5 +1,5 @@
 {
-  "name": "@lw/design-system",
+  "name": "@beesuitegit/design-system",
   "version": "0.1.0",
   "description": "Modern React design system with glassmorphism aesthetics, responsive layouts, and Framer Motion animations. TypeScript-first, WCAG AAA, dark mode built-in.",
   "type": "module",

@@ -1,4 +1,4 @@
-# @lw/design-system
+# @beesuitegit/design-system
 
 Modern React design system with **glassmorphism aesthetics**, **responsive layouts**, and **Framer Motion animations**. TypeScript-first, WCAG AAA, dark mode built-in.
 
@@ -26,7 +26,7 @@ Every component:
 ## Installation
 
 ```bash
-npm install @lw/design-system
+npm install @beesuitegit/design-system
 # peer deps:
 npm install react react-dom
 ```
@@ -39,10 +39,10 @@ Runtime dependencies (`framer-motion`, `react-intersection-observer`, `clsx`) in
 
 ```tsx
 // 1. Load tokens BEFORE the rest of the styles (single source of truth for CSS variables).
-import '@lw/design-system/styles/tokens';
-import '@lw/design-system/styles';
+import '@beesuitegit/design-system/styles/tokens';
+import '@beesuitegit/design-system/styles';
 
-import { GlassCard, HeroSection, AnimatedButton, useToast, ToastContainer } from '@lw/design-system';
+import { GlassCard, HeroSection, AnimatedButton, useToast, ToastContainer } from '@beesuitegit/design-system';
 
 export function App() {
   const { toasts, push } = useToast();
