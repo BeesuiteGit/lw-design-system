@@ -1,0 +1,176 @@
+.form {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.card {
+  padding: var(--space-2xl);
+}
+
+.progressWrapper {
+  position: relative;
+  margin-bottom: var(--space-2xl);
+  padding: 0 var(--space-md);
+}
+
+.progressBar {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+  z-index: 0;
+}
+
+.steps {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  z-index: -1;
+}
+
+.stepDot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-bg-secondary);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-base);
+}
+
+.stepDotActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.header h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+.header p {
+  color: var(--color-text-secondary);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.field label {
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+.required {
+  color: var(--color-accent);
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-primary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+  transition: border-color var(--transition-fast);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.field select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+.field [aria-invalid="true"] {
+  border-color: #ef4444;
+}
+
+.error {
+  color: #ef4444;
+  font-size: var(--text-sm);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.btn {
+  min-height: 44px;
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+.btnPrimary {
+  margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  .stepDot {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-sm);
+  }
+  .progressBar,
+  .steps::before {
+    top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progressBar,
+  .stepDot {
+    transition: none;
+  }
+}

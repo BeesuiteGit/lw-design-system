@@ -1,0 +1,83 @@
+{
+  "name": "@lw/design-system",
+  "version": "0.1.0",
+  "description": "Modern React design system with glassmorphism aesthetics, responsive layouts, and Framer Motion animations. TypeScript-first, WCAG AAA, dark mode built-in.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": "./dist/styles/index.css",
+    "./styles/tokens": "./dist/tokens/design-tokens.css",
+    "./styles/tokens.json": "./dist/tokens/design-tokens.json"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "typescript",
+    "glassmorphism",
+    "framer-motion",
+    "responsive",
+    "accessibility",
+    "wcag",
+    "dark-mode",
+    "ui-components",
+    "css-modules",
+    "tokens"
+  ],
+  "author": "The Maintainers",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USER/design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/USER/design-system/issues"
+  },
+  "homepage": "https://github.com/USER/design-system#readme",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.0.0",
+    "react-intersection-observer": "^9.10.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

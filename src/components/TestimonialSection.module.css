@@ -1,0 +1,174 @@
+.section {
+  padding: var(--space-3xl) var(--space-lg);
+  background: linear-gradient(180deg, var(--color-bg-primary), var(--color-bg-secondary));
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.header h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-sm);
+}
+
+.header p {
+  color: var(--color-text-secondary);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.quote {
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+  position: relative;
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-primary);
+}
+
+.attribution {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author {
+  font-weight: var(--weight-semibold);
+}
+
+.role {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.starFull {
+  color: #fbbf24;
+}
+
+.starEmpty {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Cards layout */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  height: 100%;
+}
+
+/* List layout */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.listItem {
+  width: 100%;
+}
+
+/* Carousel */
+.carousel {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carouselCard {
+  min-height: 200px;
+}
+
+.carouselControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.carouselBtn {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: var(--text-lg);
+  transition: background-color var(--transition-fast);
+}
+
+.carouselBtn:hover {
+  background: var(--color-bg-tertiary);
+}
+
+.dots {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--transition-fast), width var(--transition-fast);
+}
+
+.dotActive {
+  background: var(--color-primary);
+  width: 24px;
+  border-radius: var(--radius-full);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carouselBtn,
+  .dot {
+    transition: none;
+  }
+}

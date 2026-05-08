@@ -1,0 +1,50 @@
+/* Directional gradients */
+.gradient-sunrise {
+  background: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%);
+}
+
+.gradient-ocean {
+  background: linear-gradient(135deg, #0EA5E9 0%, #06B6D4 100%);
+}
+
+.gradient-forest {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
+.gradient-twilight {
+  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+}
+
+.gradient-cool {
+  background: linear-gradient(to right, #3B82F6, #06B6D4, #10B981);
+}
+
+.gradient-warm {
+  background: linear-gradient(to right, #F59E0B, #EF4444, #EC4899);
+}
+
+/* Text gradients */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated gradient */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-animate {
+    animation: none;
+  }
+}

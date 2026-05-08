@@ -1,0 +1,15 @@
+src/
+stories/
+examples/
+node_modules/
+.vscode/
+.idea/
+.github/
+coverage/
+*.log
+*.tsbuildinfo
+tsconfig.json
+vite.config.ts
+.gitignore
+.editorconfig
+.env*

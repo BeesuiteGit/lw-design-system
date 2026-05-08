@@ -1,0 +1,131 @@
+.wrapper {
+  width: 100%;
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  min-width: 600px;
+}
+
+.thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-bg-secondary);
+}
+
+.thead th {
+  text-align: left;
+  font-weight: var(--weight-semibold);
+  padding: var(--space-md) var(--space-lg);
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+  display: table-cell;
+}
+
+.sortable:hover {
+  color: var(--color-text-primary);
+}
+
+.sortable > span {
+  margin-right: var(--space-xs);
+}
+
+.sortIcon {
+  display: inline-block;
+  font-size: var(--text-xs);
+  opacity: 0.6;
+  min-width: 12px;
+}
+
+.table tbody tr {
+  transition: background-color var(--transition-fast);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.table tbody td {
+  padding: var(--space-md) var(--space-lg);
+  color: var(--color-text-primary);
+}
+
+.selected {
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.checkboxCell {
+  width: 44px;
+  text-align: center;
+}
+
+.checkboxCell input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg);
+  color: var(--color-text-secondary);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.pagination button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.pagination button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .table tbody tr,
+  .pagination button {
+    transition: none;
+  }
+}

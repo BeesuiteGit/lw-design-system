@@ -1,0 +1,67 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.field {
+  position: relative;
+  border: 2px solid var(--color-border, #d1d5db);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-sm, 8px) var(--space-md, 16px);
+  background: var(--color-bg-primary, #ffffff);
+  transition: border-color var(--transition-base, 180ms ease),
+    background-color var(--transition-base, 180ms ease);
+}
+
+.fieldError {
+  border-color: var(--color-error, #ef4444);
+  background: var(--color-error-bg, #fef2f2);
+}
+
+.fieldSuccess {
+  border-color: var(--color-success, #10b981);
+  background: var(--color-success-bg, #ecfdf5);
+}
+
+.fieldFocused {
+  border-color: var(--color-primary, #0ea5e9);
+  background: var(--color-primary-light, #e0f2fe);
+}
+
+.label {
+  position: absolute;
+  left: var(--space-md, 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary, #6b7280);
+  pointer-events: none;
+  transform-origin: left center;
+  background: transparent;
+  padding: 0 4px;
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: var(--space-md, 24px) 0 var(--space-xs, 4px);
+  font: inherit;
+  color: var(--color-text-primary, #0f172a);
+}
+
+.error {
+  color: var(--color-error, #ef4444);
+  font-size: var(--text-sm, 0.875rem);
+  margin-top: var(--space-xs, 4px);
+  display: block;
+}
+
+.successIcon {
+  position: absolute;
+  right: var(--space-md, 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-success, #10b981);
+  font-weight: 700;
+}

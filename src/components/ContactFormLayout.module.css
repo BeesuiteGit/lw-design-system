@@ -1,0 +1,145 @@
+.section {
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.header h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-sm);
+}
+
+.header p {
+  color: var(--color-text-secondary);
+}
+
+.card {
+  padding: var(--space-2xl);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.field label {
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+
+.required {
+  color: var(--color-accent);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-primary);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+.field [aria-invalid="true"] {
+  border-color: #ef4444;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error {
+  color: #ef4444;
+  font-size: var(--text-sm);
+}
+
+.submitBtn {
+  width: 100%;
+  min-height: 48px;
+  margin-top: var(--space-md);
+}
+
+.successCard {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-2xl);
+  animation: contactFormSuccess 0.4s ease-out;
+}
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-lg);
+}
+
+.successCard h2 {
+  margin: 0 0 var(--space-lg);
+}
+
+.resetBtn {
+  min-height: 44px;
+}
+
+@keyframes contactFormSuccess {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .successCard {
+    animation: none;
+  }
+  .field input,
+  .field textarea {
+    transition: none;
+  }
+}

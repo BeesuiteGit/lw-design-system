@@ -1,0 +1,19 @@
+/*
+ * Single import barrel for the design system styles.
+ *
+ * IMPORTANT: this file does NOT import design-tokens.css.
+ * Tokens must be loaded separately, BEFORE this file, so your project
+ * keeps a single source of truth for the CSS variables.
+ *
+ * Recommended setup in your project root entry (e.g. main.tsx):
+ *
+ *   import './styles/design-tokens.css';   // <-- copy from tokens/ in this skill
+ *   import './styles/index.css';            // <-- this file (the rest)
+ *
+ * This way the skill-folder Storybook works (preview.ts imports tokens)
+ * AND your project import order is unambiguous.
+ */
+
+@import './typography.css';
+@import './gradients.css';
+@import './interactions.css';

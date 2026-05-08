@@ -1,0 +1,132 @@
+.shell {
+  display: grid;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.shell.open {
+  grid-template-columns: 260px 1fr;
+}
+
+.shell.collapsed {
+  grid-template-columns: 0 1fr;
+}
+
+.sidebar {
+  background: var(--color-bg-secondary);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: width var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  padding: var(--space-lg);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nav {
+  flex: 1;
+  padding: var(--space-md);
+  overflow-y: auto;
+}
+
+.scrim {
+  display: none;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.toggle {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: var(--text-xl);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.toggle:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.topbarContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-2xl) var(--space-lg);
+  max-width: 1536px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile: sidebar overlays the content */
+@media (max-width: 1023px) {
+  .shell.open,
+  .shell.collapsed {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    z-index: 30;
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+  }
+
+  .shell.open .sidebar {
+    transform: translateX(0);
+  }
+
+  .shell.open .scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar {
+    transition: none;
+  }
+}
