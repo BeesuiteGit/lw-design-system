@@ -49,12 +49,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USER/design-system.git"
+    "url": "git+https://github.com/BeesuiteGit/lw-design-system.git"
   },
   "bugs": {
-    "url": "https://github.com/USER/design-system/issues"
+    "url": "https://github.com/BeesuiteGit/lw-design-system/issues"
   },
-  "homepage": "https://github.com/USER/design-system#readme",
+  "homepage": "https://github.com/BeesuiteGit/lw-design-system#readme",
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
