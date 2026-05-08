@@ -12,9 +12,9 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles": "./dist/styles/index.css",
+    "./styles": "./dist/styles/style.css",
     "./styles/tokens": "./dist/tokens/design-tokens.css",
-    "./styles/tokens.json": "./dist/tokens/design-tokens.json"
+    "./tokens.json": "./dist/tokens/design-tokens.json"
   },
   "sideEffects": [
     "**/*.css"

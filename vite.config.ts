@@ -1,7 +1,17 @@
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import { resolve } from 'node:path';
+import { cpSync } from 'node:fs';
+
+function copyTokens(): Plugin {
+  return {
+    name: 'lw-copy-tokens',
+    closeBundle() {
+      cpSync(resolve(__dirname, 'src/tokens'), resolve(__dirname, 'dist/tokens'), { recursive: true });
+    },
+  };
+}
 
 export default defineConfig({
   plugins: [
@@ -11,6 +21,7 @@ export default defineConfig({
       exclude: ['stories', 'examples', '**/*.stories.tsx'],
       rollupTypes: false,
     }),
+    copyTokens(),
   ],
   build: {
     lib: {
@@ -35,7 +46,7 @@ export default defineConfig({
         },
       },
     },
-    sourcemap: true,
+    sourcemap: false,
     cssCodeSplit: false,
   },
   css: {
